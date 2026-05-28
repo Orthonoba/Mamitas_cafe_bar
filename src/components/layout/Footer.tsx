@@ -1,9 +1,20 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Coffee, Instagram, Facebook, MapPin, Clock, Phone, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants/site";
 import { NAV_LINKS } from "@/lib/constants/navigation";
 
-export function Footer() {
+export async function Footer() {
+  const tNav = await getTranslations("nav");
+  const tFooter = await getTranslations("footer");
+  const tHours = await getTranslations("hours");
+
+  const HOURS = [
+    { day: tHours("mondayFriday"), time: "08:00 – 18:00" },
+    { day: tHours("saturday"), time: "09:00 – 20:00" },
+    { day: tHours("sunday"), time: "10:00 – 17:00" },
+  ];
+
   return (
     <footer className="bg-charcoal text-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -12,13 +23,9 @@ export function Footer() {
           <div className="col-span-1 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <Coffee className="text-rose-soft" size={28} />
-              <span className="font-montserrat text-xl font-bold text-white">
-                Mamitas
-              </span>
+              <span className="font-montserrat text-xl font-bold text-white">Mamitas</span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-white/60">
-              {SITE_CONFIG.tagline}
-            </p>
+            <p className="mt-4 text-sm leading-relaxed text-white/60">{tFooter("tagline")}</p>
             <div className="mt-6 flex items-center gap-4">
               <a
                 href={SITE_CONFIG.social.instagram}
@@ -61,16 +68,16 @@ export function Footer() {
           {/* Navigation links */}
           <div>
             <h3 className="font-montserrat text-sm font-semibold uppercase tracking-wider text-white/40">
-              Navegación
+              {tFooter("navigation")}
             </h3>
             <ul className="mt-4 space-y-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    href={link.href as "/"}
                     className="text-sm text-white/70 transition-colors hover:text-rose-soft"
                   >
-                    {link.label}
+                    {tNav(link.key)}
                   </Link>
                 </li>
               ))}
@@ -80,10 +87,10 @@ export function Footer() {
           {/* Hours */}
           <div>
             <h3 className="font-montserrat text-sm font-semibold uppercase tracking-wider text-white/40">
-              Horarios
+              {tFooter("hours")}
             </h3>
             <ul className="mt-4 space-y-3">
-              {SITE_CONFIG.hours.map((h) => (
+              {HOURS.map((h) => (
                 <li key={h.day} className="flex items-start gap-2">
                   <Clock size={14} className="mt-0.5 shrink-0 text-rose-soft" />
                   <div>
@@ -98,14 +105,14 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="font-montserrat text-sm font-semibold uppercase tracking-wider text-white/40">
-              Contacto
+              {tFooter("contact")}
             </h3>
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin size={14} className="mt-0.5 shrink-0 text-rose-soft" />
                 <span className="text-sm text-white/70">
-                  {SITE_CONFIG.address.city}, {SITE_CONFIG.address.canton},{" "}
-                  {SITE_CONFIG.address.country}
+                  {SITE_CONFIG.address.street},{" "}
+                  {SITE_CONFIG.address.postalCode} {SITE_CONFIG.address.city}
                 </span>
               </li>
               <li className="flex items-center gap-2">
@@ -146,21 +153,20 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} {SITE_CONFIG.name}. Hecho con amor en
-            Lugano 🇨🇭🇻🇪
+            © {new Date().getFullYear()} {SITE_CONFIG.name}. {tFooter("madeWith")} 🇨🇭🇻🇪
           </p>
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
               className="text-xs text-white/40 hover:text-white/70 transition-colors"
             >
-              Política de privacidad
+              {tFooter("privacy")}
             </Link>
             <Link
               href="/contact"
               className="text-xs text-white/40 hover:text-white/70 transition-colors"
             >
-              Contacto
+              {tFooter("contact")}
             </Link>
           </div>
         </div>

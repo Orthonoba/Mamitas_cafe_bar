@@ -11,14 +11,15 @@ export const SITE_CONFIG = {
     canton: "TI",
     country: "Switzerland",
     postalCode: "6900",
-    googleMapsUrl: "https://maps.google.com/?q=Via+al+Forte+10,+6900+Lugano,+Switzerland",
+    googleMapsUrl:
+      "https://maps.google.com/?q=Via+al+Forte+10,+6900+Lugano,+Switzerland",
     googleMapsEmbed:
       "https://maps.google.com/maps?q=Via+al+Forte+10,+6900+Lugano,+Switzerland&output=embed&z=16",
   },
   contact: {
-    phone: "+41 76 XXX XX XX",
-    whatsapp: "+41760000000",
-    email: "info@mamitascaffe.ch",
+    phone: "+41 91 922 00 59",
+    whatsapp: "+41 76 464 09 05",
+    email: "eslynaga@gmail.com",
   },
   hours: [
     { day: "Lunes – Viernes", dayIt: "Lunedì – Venerdì", time: "08:00 – 18:00" },
@@ -29,6 +30,7 @@ export const SITE_CONFIG = {
     instagram: "https://instagram.com/mamitas_caffebar",
     facebook: "https://facebook.com/mamitascaffebar",
     tiktok: "https://tiktok.com/@mamitas_caffebar",
-    whatsapp: "https://wa.me/41760000000?text=Hola%20Mamitas!%20Quiero%20informaci%C3%B3n",
+    whatsapp:
+      "https://wa.me/41764640905?text=Ciao%20Mamitas!%20Vorrei%20informazioni",
   },
 } as const;

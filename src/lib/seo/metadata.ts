@@ -7,6 +7,7 @@ interface PageSEOProps {
   path: string;
   image?: string;
   keywords?: string[];
+  locale?: string;
 }
 
 export function buildMetadata({
@@ -15,9 +16,12 @@ export function buildMetadata({
   path,
   image = "/images/og-default.jpg",
   keywords = [],
+  locale = "it",
 }: PageSEOProps): Metadata {
-  const url = `${SITE_CONFIG.url}${path}`;
+  const url = `${SITE_CONFIG.url}/${locale}${path === "/" ? "" : path}`;
   const fullTitle = `${title} | ${SITE_CONFIG.name}`;
+  const ogLocale = locale === "it" ? "it_CH" : "es_VE";
+  const altLocale = locale === "it" ? "es_VE" : "it_CH";
 
   return {
     title: fullTitle,
@@ -26,7 +30,7 @@ export function buildMetadata({
       "arepas Lugano",
       "brunch Lugano",
       "ristorante venezuelano Lugano",
-      "café Lugano",
+      "caffè Lugano",
       "cucina venezuelana Ticino",
       ...keywords,
     ],
@@ -44,8 +48,8 @@ export function buildMetadata({
           alt: fullTitle,
         },
       ],
-      locale: "it_CH",
-      alternateLocale: ["es_VE", "de_CH"],
+      locale: ogLocale,
+      alternateLocale: [altLocale],
       type: "website",
     },
     twitter: {
@@ -56,6 +60,10 @@ export function buildMetadata({
     },
     alternates: {
       canonical: url,
+      languages: {
+        it: `${SITE_CONFIG.url}/it${path === "/" ? "" : path}`,
+        es: `${SITE_CONFIG.url}/es${path === "/" ? "" : path}`,
+      },
     },
     robots: {
       index: true,

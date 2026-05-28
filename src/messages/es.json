@@ -1,0 +1,409 @@
+{
+  "nav": {
+    "menu": "Menú",
+    "arepas": "Arepas",
+    "brunch": "Brunch",
+    "karaoke": "Karaoke",
+    "birthdays": "Cumpleaños",
+    "delivery": "Delivery",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "reserveParty": "Reservar Fiesta",
+    "reservePartyFull": "Reservar Fiesta de Cumpleaños",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "home": {
+    "eyebrow": "Mamitas Caffe & Bar · Lugano",
+    "title": "Sabores latinos en el corazón de Lugano",
+    "subtitle": "Arepas venezolanas auténticas, brunch tropical y fiestas de cumpleaños inolvidables. Un pedacito de Venezuela en el Ticino.",
+    "ctaMenu": "Ver Menú",
+    "ctaBirthday": "Reservar Fiesta",
+    "seo": {
+      "title": "Arepas & Brunch Venezolano en Lugano",
+      "description": "Mamitas Caffe & Bar en Lugano — arepas venezolanas auténticas, brunch latinoamericano, café de especialidad y fiestas de cumpleaños infantiles. Un pedazo de Venezuela en el corazón del Ticino."
+    }
+  },
+  "footer": {
+    "navigation": "Navegación",
+    "hours": "Horarios",
+    "contact": "Contacto",
+    "privacy": "Política de privacidad",
+    "tagline": "Sabores de Venezuela en el corazón de Lugano",
+    "madeWith": "Hecho con amor en Lugano"
+  },
+  "about": {
+    "seo": {
+      "title": "Nuestra Historia — De Barquisimeto a Lugano",
+      "description": "Conoce la historia de Mamitas Caffe & Bar: una familia venezolana de Barquisimeto que llevó el sabor de Venezuela al corazón de Lugano, Suiza."
+    },
+    "hero": {
+      "eyebrow": "Nuestra Historia",
+      "title": "De Barquisimeto",
+      "titleHighlight": "a Lugano",
+      "description": "Un viaje de miles de kilómetros, una cultura que no se puede dejar atrás, y el deseo de compartir lo mejor de Venezuela con el mundo."
+    },
+    "block1": {
+      "eyebrow": "El origen",
+      "title": "Raíces en Barquisimeto",
+      "p1": "Todo comenzó en las cocinas de Barquisimeto, la Ciudad Musical de Venezuela, donde aprendimos a preparar arepas con la masa perfecta, a filtrar el café guayoyo con paciencia, y a hacer el quesillo con la receta de la abuela.",
+      "p2": "Venezuela nos enseñó que la comida es amor compartido. Que una mesa bien puesta es sinónimo de familia reunida. Y que el sabor auténtico nunca se olvida."
+    },
+    "block2": {
+      "eyebrow": "El destino",
+      "title": "Un hogar en Lugano",
+      "p1": "Llegamos a Lugano con las maletas llenas de recetas, sueños y mucho sabor venezolano. La ciudad nos recibió con los brazos abiertos, y nosotros la correspondimos con lo que mejor sabemos hacer: cocinar con el corazón.",
+      "p2": "Mamitas Caffe & Bar nació de ese encuentro entre la calidad suiza y la calidez venezolana. Un espacio donde la comunidad latina y los amigos locales se reúnen alrededor de sabores que transportan."
+    },
+    "culture": {
+      "title": "Un poco de Venezuela en cada visita",
+      "arepas": "Arepas Auténticas",
+      "coffee": "Café Guayoyo",
+      "parties": "Fiestas Latinas",
+      "love": "Amor Venezolano"
+    },
+    "values": {
+      "eyebrow": "Nuestros valores",
+      "title": "Lo que nos define",
+      "loveTitle": "Cocinado con Amor",
+      "loveDesc": "Cada arepa, cada café y cada postre lleva el amor de nuestra familia venezolana.",
+      "authenticTitle": "Autenticidad",
+      "authenticDesc": "Recetas originales de Barquisimeto que conservamos con orgullo y fidelidad.",
+      "qualityTitle": "Calidad",
+      "qualityDesc": "Ingredientes frescos y de primera calidad, seleccionados cada día para ti.",
+      "familyTitle": "Familia",
+      "familyDesc": "Tratamos a cada cliente como parte de nuestra familia venezolana extendida."
+    },
+    "cta": {
+      "title": "Ven a conocernos",
+      "subtitle": "Lugano, Suiza · Abierto todos los días",
+      "button": "Cómo llegar"
+    }
+  },
+  "menu": {
+    "seo": {
+      "title": "Menú — Arepas, Brunch & Café",
+      "description": "Descubre nuestro menú venezolano completo: arepas, desayunos, panini, postres, bebidas tropicales y más. Todo preparado con amor en Lugano."
+    },
+    "hero": {
+      "eyebrow": "Nuestra Carta",
+      "title": "El Menú de Mamitas",
+      "description": "Sabores auténticos de Venezuela preparados con ingredientes frescos y mucho amor en el corazón de Lugano."
+    },
+    "noItems": "No hay items en esta categoría."
+  },
+  "arepas": {
+    "seo": {
+      "title": "Arepas Venezolanas Auténticas en Lugano",
+      "description": "Las mejores arepas venezolanas de Lugano: Reina Pepiada, Dominó, La Pelúa, Catira, La Sifrina y la Mamita Especial. Recetas auténticas de Barquisimeto."
+    },
+    "hero": {
+      "eyebrow": "El corazón de Venezuela",
+      "title": "Nuestras Arepas",
+      "description": "La arepa es mucho más que un alimento — es cultura, identidad y amor venezolano. Cada una está preparada con la receta original que aprendimos en Barquisimeto y que ahora traemos al corazón de Lugano."
+    },
+    "cta": {
+      "title": "¿Ya tienes tu favorita?",
+      "subtitle": "Pide por WhatsApp o visítanos en Lugano",
+      "button": "Pedir por WhatsApp"
+    }
+  },
+  "brunch": {
+    "seo": {
+      "title": "Brunch Tropical Venezolano — Sábados y Domingos en Lugano",
+      "description": "El mejor brunch latino de Lugano cada sábado y domingo de 10:00 a 14:00. Arepas, açaí bowls, french toast de coco, mimosas tropicales y más. Mamitas Caffe & Bar."
+    },
+    "hero": {
+      "eyebrow": "Sábado & Domingo · 10:00 – 14:00",
+      "title": "Brunch Tropical",
+      "titleHighlight": "de Mamitas",
+      "description": "El único brunch venezolano de Lugano. Colores tropicales, sabores auténticos y la energía latina que te hará olvidar que es lunes mañana.",
+      "ctaReserve": "Reservar Mesa",
+      "ctaMenu": "Ver Menú Completo"
+    },
+    "info": {
+      "when": "Cuándo",
+      "schedule": "Sábado & Domingo",
+      "hoursLabel": "Horario",
+      "time": "10:00 – 14:00",
+      "reservations": "Reservas",
+      "via": "Por WhatsApp"
+    },
+    "menuSection": {
+      "eyebrow": "La Carta",
+      "title": "El Brunch más Latino de Suiza",
+      "subtitle": "Cada plato es una experiencia. Cada sorbo, un recuerdo."
+    },
+    "experience": {
+      "eyebrow": "La Experiencia",
+      "title": "No es solo desayuno.",
+      "titleLine2": "Es un ritual.",
+      "p1": "Cada fin de semana transformamos Mamitas en el rincón más tropical de Lugano. Música latina, colores vibrantes, aromas de Venezuela y un equipo que cocina con el alma.",
+      "p2": "Ven con tu pareja, tu familia o tus amigos. Aquí todos son bienvenidos y nadie se va con hambre.",
+      "instagramLink": "Ver fotos del brunch en Instagram →"
+    },
+    "cta": {
+      "title": "¿Este fin de semana?",
+      "subtitle": "Las mesas se agotan — reserva por WhatsApp antes del viernes",
+      "button": "Reservar Brunch Ahora"
+    }
+  },
+  "karaoke": {
+    "seo": {
+      "title": "Latin Karaoke Nights — Viernes y Sábados en Lugano",
+      "description": "La noche más latina de Lugano cada viernes y sábado en Mamitas Caffe & Bar. Karaoke en español, cócteles tropicales, tapas venezolanas y energía latina sin límites."
+    },
+    "hero": {
+      "badge": "Cada Viernes & Sábado",
+      "description": "La noche más latina de Lugano. Canta, baila, bebe y ríe.\nTodos son bienvenidos. Nadie juzga la afinación.",
+      "ctaReserve": "Reservar Mesa VIP",
+      "ctaHighlights": "Ver Highlights →"
+    },
+    "scheduleTitle": "La noche, paso a paso",
+    "schedule": [
+      { "time": "19:00", "event": "Aperitivo & Bienvenida", "desc": "Tabla Karaoke + primeras canciones" },
+      { "time": "20:30", "event": "El Karaoke Empieza", "desc": "Salsa, reggaeton, bachata, pop latino" },
+      { "time": "22:00", "event": "Hora Pico", "desc": "Máxima energía — el local se transforma" },
+      { "time": "00:00", "event": "Encore & Cierre", "desc": "Las últimas canciones y los mejores recuerdos" }
+    ],
+    "genresTitle": "Géneros disponibles",
+    "genres": ["Salsa", "Reggaeton", "Bachata", "Vallenato", "Pop Latino", "Rock en Español", "Merengue", "Cumbia"],
+    "details": [
+      "Todos los viernes y sábados",
+      "19:00 – 00:00 (último turno)",
+      "Equipo de sonido profesional",
+      "+10.000 canciones en español e italiano"
+    ],
+    "vip": {
+      "title": "Mesa VIP Karaoke",
+      "description": "Reserva tu mesa con antelación y recibe una Tabla Karaoke de bienvenida. Perfecto para despedidas de soltero/a, cumpleaños y grupos."
+    },
+    "menuSection": {
+      "eyebrow": "Menú de la Noche",
+      "title": "Para cantar mejor",
+      "subtitle": "Selección especial diseñada para las noches de karaoke"
+    },
+    "cta": {
+      "title": "¿TE ATREVES A CANTAR?",
+      "subtitle": "Aquí nadie juzga. Solo aplaudimos.",
+      "button": "Reservar para este Viernes"
+    }
+  },
+  "birthdays": {
+    "seo": {
+      "title": "Fiestas de Cumpleaños Infantiles en Lugano",
+      "description": "Organiza la fiesta de cumpleaños perfecta en Mamitas Caffe & Bar, Lugano. Mini parque infantil, menú venezolano, decoración temática. 3 paquetes disponibles desde CHF 25."
+    },
+    "hero": {
+      "eyebrow": "Zona Infantil · Mamitas",
+      "title": "Fiestas de",
+      "titleHighlight": "Cumpleaños",
+      "description": "Hacemos realidad la fiesta que tu pequeño siempre soñó. Mini parque, menú venezolano, decoración mágica y momentos que nunca olvidarán."
+    },
+    "form": {
+      "eyebrow": "Reservar",
+      "title": "¡Empieza la fiesta!",
+      "description": "Completa el formulario y te contactamos en menos de 24 horas para confirmar todos los detalles."
+    },
+    "packages": {
+      "eyebrow": "Paquetes",
+      "title": "Elige tu fiesta perfecta",
+      "subtitle": "Tres opciones diseñadas con amor para que la celebración sea exactamente como la soñaste.",
+      "popular": "Más Popular",
+      "select": "Seleccionar"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Preguntas frecuentes",
+      "subtitle": "Todo lo que necesitas saber para la fiesta perfecta",
+      "items": [
+        {
+          "q": "¿Con cuánta anticipación debo reservar?",
+          "a": "Recomendamos reservar con al menos 2-3 semanas de anticipación, especialmente los sábados y domingos. Para fiestas Premium, 1 mes antes es ideal para asegurar la decoración personalizada."
+        },
+        {
+          "q": "¿Puedo traer mi propio pastel?",
+          "a": "Para los paquetes Mini y Latin Party, ofrecemos nuestro pastel artesanal incluido. Si tienes un pastel especial ya encargado, podemos coordinarlo con un pequeño cargo de €20 por el servicio de corte."
+        },
+        {
+          "q": "¿Tienen opciones vegetarianas o sin gluten?",
+          "a": "¡Por supuesto! Nuestro menú venezolano tiene opciones vegetarianas como cachapas, tequeños y ensaladas. Para opciones sin gluten o alergias específicas, consúltanos al hacer la reserva y adaptamos el menú."
+        },
+        {
+          "q": "¿Cuál es la capacidad máxima del espacio?",
+          "a": "Nuestro espacio puede acomodar hasta 50 personas cómodamente para la zona de fiesta. Para grupos más grandes, podemos organizar eventos en el espacio completo del local. Consúltanos."
+        },
+        {
+          "q": "¿Qué incluye exactamente la zona de juegos?",
+          "a": "La zona infantil cuenta con juegos adaptados para niños de 2 a 10 años: castillo inflable (para grupos de 15+), área de actividades creativas, mesa de dibujo y zona de juegos blandos para los más pequeños."
+        },
+        {
+          "q": "¿Aceptan pagos con tarjeta de crédito?",
+          "a": "Sí, aceptamos todas las tarjetas de crédito y débito (Visa, Mastercard, AMEX), TWINT y efectivo en francos suizos. Para reservar, solicitamos un depósito del 30% con hasta 48h de antelación."
+        },
+        {
+          "q": "¿Se puede personalizar la decoración temática?",
+          "a": "En los paquetes Latin Party y Premium, la decoración es completamente personalizable. Podemos hacer temáticas de princesas, superhéroes, animales, personajes venezolanos y más. ¡Dinos la idea y lo hacemos realidad!"
+        }
+      ]
+    }
+  },
+  "delivery": {
+    "seo": {
+      "title": "Delivery — Mamitas a Tu Puerta en Lugano",
+      "description": "Recibe la comida venezolana de Mamitas Caffe & Bar en casa. Arepas, empanadas, tequeños y más. Disponible en Smood, Uber Eats y Just Eat Lugano."
+    },
+    "hero": {
+      "eyebrow": "Delivery Lugano",
+      "title": "Mamitas",
+      "titleHighlight": "a tu puerta",
+      "description": "Las arepas más auténticas de Lugano ahora llegan a tu hogar. Packaging premium, calidad garantizada, sabor venezolano sin moverte del sofá."
+    },
+    "platforms": [
+      { "name": "Smood", "desc": "El líder de delivery en Ticino" },
+      { "name": "Uber Eats", "desc": "Rápido y confiable en toda Lugano" },
+      { "name": "Just Eat", "desc": "Para familias y pedidos grandes" }
+    ],
+    "why": {
+      "eyebrow": "Por qué Mamitas Delivery",
+      "title": "Calidad que viaja contigo",
+      "subtitle": "No hacemos concesiones. El mismo amor de la cocina llega a tu mesa.",
+      "items": [
+        { "title": "Packaging Premium", "desc": "Cajas kraft con logo Mamitas, salsas en frasquitos y nota de bienvenida artesanal." },
+        { "title": "Calidad Garantizada", "desc": "Los mismos productos que sirves en el local. Sin compromiso de calidad." },
+        { "title": "30–45 min", "desc": "Tiempo estimado de entrega en Lugano y alrededores." },
+        { "title": "Zona de Cobertura", "desc": "Lugano, Paradiso, Bissone, Melide, Lugano Nord y Massagno." }
+      ]
+    },
+    "deliveryMenu": {
+      "eyebrow": "Delivery Box",
+      "title": "Paquetes diseñados para tu hogar",
+      "subtitle": "Combos que viajan perfecto y llegan llenos de sabor"
+    },
+    "packaging": {
+      "eyebrow": "Packaging",
+      "title": "Hasta el packaging",
+      "titleLine2": "es premium",
+      "items": [
+        "Cajas kraft con logo Mamitas en rosa",
+        "Salsas en frasquitos de vidrio reutilizables",
+        "Nota artesanal 'Cocinado desde Barquisimeto'",
+        "Packaging 100% reciclable",
+        "QR del menú + código de fidelidad",
+        "Stickers de Venezuela en cada pedido"
+      ]
+    },
+    "cta": {
+      "title": "¿Pedido especial o corporativo?",
+      "subtitle": "Para grupos grandes, empresas o eventos. Escríbenos y diseñamos tu menú.",
+      "button": "Pedir por WhatsApp"
+    }
+  },
+  "gallery": {
+    "seo": {
+      "title": "Galería — Mamitas Caffe & Bar",
+      "description": "Explora la galería de Mamitas Caffe & Bar en Lugano. Arepas venezolanas, ambiente tropical, postres artesanales y momentos de celebración."
+    },
+    "hero": {
+      "eyebrow": "Galería",
+      "title": "Un vistazo a Mamitas",
+      "description": "Colores, sabores y momentos que solo encuentras en nuestro café venezolano en Lugano"
+    },
+    "filter": {
+      "all": "Todo",
+      "food": "Comida",
+      "arepas": "Arepas",
+      "ambiance": "Ambiente",
+      "drinks": "Bebidas",
+      "desserts": "Postres",
+      "events": "Eventos"
+    },
+    "instagram": {
+      "title": "Síguenos en Instagram",
+      "button": "Seguir en Instagram"
+    },
+    "lightbox": {
+      "close": "Cerrar",
+      "prev": "Anterior",
+      "next": "Siguiente"
+    }
+  },
+  "contact": {
+    "seo": {
+      "title": "Contacto — Mamitas Caffe & Bar Lugano",
+      "description": "Contacta con Mamitas Caffe & Bar en Lugano. Encuentra nuestra dirección, horarios, teléfono y formulario de contacto. ¡Estamos aquí para ayudarte!"
+    },
+    "hero": {
+      "eyebrow": "Contacto",
+      "title": "Estamos en Lugano",
+      "description": "¿Tienes alguna pregunta o quieres hacer una reserva? Escríbenos, estamos aquí para ayudarte."
+    },
+    "info": {
+      "address": "Dirección",
+      "phone": "Teléfono",
+      "email": "Email",
+      "hoursLabel": "Horarios",
+      "quickContact": "Contacto rápido"
+    }
+  },
+  "hours": {
+    "mondayFriday": "Lunes – Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo"
+  },
+  "features": {
+    "items": [
+      {
+        "title": "Café Venezolano",
+        "description": "Guayoyo y tetero auténticos, recetas de Barquisimeto"
+      },
+      {
+        "title": "Postres Artesanales",
+        "description": "Quesillo, bienmesabe y dulces típicos venezolanos"
+      },
+      {
+        "title": "Zona Infantil",
+        "description": "Mini parque y fiestas de cumpleaños para los más pequeños"
+      },
+      {
+        "title": "Corazón de Lugano",
+        "description": "Un rincón tropical en el Ticino suizo"
+      }
+    ]
+  },
+  "bestSellers": {
+    "eyebrow": "Más Populares",
+    "title": "Los favoritos de Lugano",
+    "subtitle": "Los platos que hacen volver a nuestros clientes una y otra vez",
+    "viewAll": "Ver Menú Completo"
+  },
+  "birthdayCta": {
+    "eyebrow": "Zona Infantil",
+    "title": "¿CELEBRAS TU",
+    "titleHighlight": "CUMPLEAÑOS?",
+    "description": "Organizamos la fiesta perfecta para tu pequeño con arepas, música latina y un mini parque lleno de magia.",
+    "highlight1": "3 paquetes a tu medida",
+    "highlight2": "Mini parque temático incluido",
+    "highlight3": "Ambiente latino mágico",
+    "button": "Ver Paquetes de Fiesta"
+  },
+  "galleryPreview": {
+    "eyebrow": "Galería",
+    "title": "Un vistazo al paraíso",
+    "subtitle": "Colores, sabores y momentos que solo encuentras en Mamitas",
+    "button": "Ver Galería Completa"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "Lo que dicen nuestros clientes",
+    "subtitle": "Palabras de quienes ya han vivido la experiencia Mamitas",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "dot": "Testimonio {n}"
+  },
+  "whatsappCta": {
+    "title": "¿Tienes alguna pregunta?",
+    "subtitle": "Escríbenos directamente por WhatsApp y te respondemos enseguida.",
+    "button": "Chatear por WhatsApp"
+  }
+}

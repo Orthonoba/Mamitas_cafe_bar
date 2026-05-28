@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { MenuCard } from "./MenuCard";
 import { MenuFilter } from "./MenuFilter";
 import { useMenuFilter } from "@/hooks/useMenuFilter";
@@ -12,6 +13,7 @@ interface MenuGridProps {
 }
 
 export function MenuGrid({ items, categories }: MenuGridProps) {
+  const t = useTranslations("menu");
   const { filtered, activeCategory, setActiveCategory } = useMenuFilter(items);
 
   return (
@@ -41,9 +43,7 @@ export function MenuGrid({ items, categories }: MenuGridProps) {
         </AnimatePresence>
 
         {filtered.length === 0 && (
-          <p className="py-16 text-center text-charcoal/50">
-            No hay items en esta categoría.
-          </p>
+          <p className="py-16 text-center text-charcoal/50">{t("noItems")}</p>
         )}
       </div>
     </div>

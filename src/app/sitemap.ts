@@ -1,18 +1,34 @@
 import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://mamitascaffe.ch";
+const LOCALES = ["it", "es"] as const;
+
+const ROUTES = [
+  { path: "/", changeFrequency: "weekly" as const, priority: 1 },
+  { path: "/menu", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: "/arepas", changeFrequency: "monthly" as const, priority: 0.9 },
+  { path: "/brunch", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: "/karaoke", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/delivery", changeFrequency: "weekly" as const, priority: 0.8 },
+  { path: "/birthdays", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/gallery", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/about", changeFrequency: "yearly" as const, priority: 0.6 },
+  { path: "/contact", changeFrequency: "yearly" as const, priority: 0.6 },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${BASE_URL}/menu`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE_URL}/arepas`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/brunch`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE_URL}/karaoke`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/delivery`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE_URL}/birthdays`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/gallery`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.6 },
-    { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.6 },
-  ];
+  const entries: MetadataRoute.Sitemap = [];
+
+  for (const route of ROUTES) {
+    for (const locale of LOCALES) {
+      entries.push({
+        url: `${BASE_URL}/${locale}${route.path === "/" ? "" : route.path}`,
+        lastModified: new Date(),
+        changeFrequency: route.changeFrequency,
+        priority: route.priority,
+      });
+    }
+  }
+
+  return entries;
 }

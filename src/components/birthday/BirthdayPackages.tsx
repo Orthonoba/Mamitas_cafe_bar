@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Check, X, Sparkles, PartyPopper, Crown } from "lucide-react";
 import { BIRTHDAY_PACKAGES } from "@/lib/data/birthday-packages";
 import { formatPrice } from "@/lib/utils/formatters";
@@ -7,22 +8,21 @@ import { cn } from "@/lib/utils";
 
 const ICON_MAP = { Sparkles, PartyPopper, Crown };
 
-export function BirthdayPackages() {
+export async function BirthdayPackages() {
+  const t = await getTranslations("birthdays.packages");
+
   return (
     <section className="section-padding bg-cream">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeUp>
           <div className="mb-12 text-center">
             <span className="font-bebas mb-2 block text-sm tracking-[0.25em] text-rose-medium uppercase">
-              Paquetes
+              {t("eyebrow")}
             </span>
             <h2 className="font-montserrat text-3xl font-bold text-charcoal md:text-4xl lg:text-5xl">
-              Elige tu fiesta perfecta
+              {t("title")}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-charcoal/60">
-              Tres opciones diseñadas con amor para que la celebración sea
-              exactamente como la soñaste.
-            </p>
+            <p className="mx-auto mt-4 max-w-xl text-charcoal/60">{t("subtitle")}</p>
           </div>
         </FadeUp>
 
@@ -42,7 +42,7 @@ export function BirthdayPackages() {
                   {pkg.isPopular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                       <span className="rounded-full bg-tropical-green px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow">
-                        Más Popular
+                        {t("popular")}
                       </span>
                     </div>
                   )}
@@ -56,9 +56,7 @@ export function BirthdayPackages() {
                     >
                       <Icon
                         size={24}
-                        className={
-                          pkg.isPopular ? "text-tropical-green" : "text-rose-medium"
-                        }
+                        className={pkg.isPopular ? "text-tropical-green" : "text-rose-medium"}
                       />
                     </div>
                     <div>
@@ -82,15 +80,9 @@ export function BirthdayPackages() {
                     {pkg.features.map((f) => (
                       <li key={f.label} className="flex items-start gap-2.5">
                         {f.included ? (
-                          <Check
-                            size={16}
-                            className="mt-0.5 shrink-0 text-tropical-green"
-                          />
+                          <Check size={16} className="mt-0.5 shrink-0 text-tropical-green" />
                         ) : (
-                          <X
-                            size={16}
-                            className="mt-0.5 shrink-0 text-charcoal/25"
-                          />
+                          <X size={16} className="mt-0.5 shrink-0 text-charcoal/25" />
                         )}
                         <span
                           className={cn(
@@ -105,7 +97,7 @@ export function BirthdayPackages() {
                   </ul>
 
                   <Link
-                    href={`/birthdays#reservar?package=${pkg.id}`}
+                    href={`/birthdays#reservar?package=${pkg.id}` as "/"}
                     className={cn(
                       "block rounded-full py-3.5 text-center text-sm font-semibold transition-colors",
                       pkg.isPopular
@@ -113,7 +105,7 @@ export function BirthdayPackages() {
                         : "border-2 border-rose-medium text-rose-medium hover:bg-rose-medium hover:text-white"
                     )}
                   >
-                    Seleccionar
+                    {t("select")}
                   </Link>
                 </article>
               </StaggerItem>
