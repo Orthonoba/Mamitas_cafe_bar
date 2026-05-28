@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { Poppins, Montserrat, Bebas_Neue } from "next/font/google";
+import { Fredoka, Nunito, Quicksand } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import type { Locale } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
@@ -12,23 +12,26 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { getRestaurantJsonLd } from "@/lib/seo/json-ld";
 import "../globals.css";
 
-const poppins = Poppins({
+// Body font — Nunito: redondeado, legible, moderno
+const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-poppins",
   display: "swap",
 });
 
-const montserrat = Montserrat({
+// Heading font — Fredoka: display redondeado, alegre, instagram-friendly
+const fredoka = Fredoka({
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-montserrat",
   display: "swap",
 });
 
-const bebasNeue = Bebas_Neue({
+// Display/eyebrow font — Quicksand: geométrico suave, premium
+const quicksand = Quicksand({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-bebas",
   display: "swap",
 });
@@ -64,7 +67,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${poppins.variable} ${montserrat.variable} ${bebasNeue.variable}`}
+      className={`${nunito.variable} ${fredoka.variable} ${quicksand.variable}`}
     >
       <body className="antialiased">
         <script

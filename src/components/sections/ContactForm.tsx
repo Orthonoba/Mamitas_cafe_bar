@@ -53,7 +53,7 @@ export function ContactForm() {
   if (success) {
     return (
       <div className="flex h-full flex-col items-center justify-center gap-4 rounded-3xl bg-white p-12 text-center shadow-sm">
-        <CheckCircle className="text-tropical-green" size={56} />
+        <CheckCircle className="text-tropical-green-dark" size={56} />
         <h3 className="font-montserrat text-2xl font-bold text-charcoal">
           ¡Mensaje enviado!
         </h3>

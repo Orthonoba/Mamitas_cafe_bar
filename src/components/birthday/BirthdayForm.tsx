@@ -93,7 +93,7 @@ function BirthdayFormInner() {
           colors={["#F4A7B9", "#4CAF7D", "#F5ECD7", "#E8849A", "#7DCEA0"]}
         />
         <div className="flex flex-col items-center gap-4 rounded-3xl bg-white p-12 text-center shadow-(--shadow-card)">
-          <CheckCircle className="text-tropical-green" size={60} />
+          <CheckCircle className="text-tropical-green-dark" size={60} />
           <h3 className="font-montserrat text-2xl font-bold text-charcoal">
             ¡Solicitud enviada!
           </h3>

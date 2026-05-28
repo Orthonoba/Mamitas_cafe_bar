@@ -76,7 +76,7 @@ export function QRSection() {
               Accede a todo nuestro menú desde tu móvil. Sin papel, sin esperas.
               También puedes compartirlo con tus amigos.
             </p>
-            <p className="mt-4 font-mono text-sm text-tropical-green-light">
+            <p className="mt-4 font-mono text-sm text-rose-soft">
               {MENU_URL}
             </p>
           </FadeUp>

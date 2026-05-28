@@ -174,15 +174,15 @@ export default async function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-tropical-green py-20 text-center">
+      <section className="bg-linear-to-br from-rose-medium to-rose-dark py-20 text-center">
         <FadeUp>
           <h2 className="font-montserrat text-2xl font-bold text-white md:text-3xl">
             {t("cta.title")}
           </h2>
-          <p className="mt-3 text-white/80">{t("cta.subtitle")}</p>
+          <p className="mt-3 text-white/85">{t("cta.subtitle")}</p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-tropical-green-dark shadow-lg transition-transform hover:scale-105"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-rose-dark shadow-lg shadow-rose-dark/20 transition-transform hover:scale-105"
           >
             {t("cta.button")}
           </Link>

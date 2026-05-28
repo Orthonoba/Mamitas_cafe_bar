@@ -3,17 +3,12 @@ import { Link } from "@/i18n/navigation";
 import { Coffee, Instagram, Facebook, MapPin, Clock, Phone, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants/site";
 import { NAV_LINKS } from "@/lib/constants/navigation";
+import { BUSINESS_HOURS } from "@/lib/business-hours";
 
 export async function Footer() {
   const tNav = await getTranslations("nav");
   const tFooter = await getTranslations("footer");
   const tHours = await getTranslations("hours");
-
-  const HOURS = [
-    { day: tHours("mondayFriday"), time: "08:00 – 18:00" },
-    { day: tHours("saturday"), time: "09:00 – 20:00" },
-    { day: tHours("sunday"), time: "10:00 – 17:00" },
-  ];
 
   return (
     <footer className="bg-charcoal text-white">
@@ -84,17 +79,17 @@ export async function Footer() {
             </ul>
           </div>
 
-          {/* Hours */}
+          {/* Hours — single source: BUSINESS_HOURS */}
           <div>
             <h3 className="font-montserrat text-sm font-semibold uppercase tracking-wider text-white/40">
               {tFooter("hours")}
             </h3>
             <ul className="mt-4 space-y-3">
-              {HOURS.map((h) => (
-                <li key={h.day} className="flex items-start gap-2">
+              {BUSINESS_HOURS.map((h) => (
+                <li key={h.dayKey} className="flex items-start gap-2">
                   <Clock size={14} className="mt-0.5 shrink-0 text-rose-soft" />
                   <div>
-                    <p className="text-sm font-medium text-white/90">{h.day}</p>
+                    <p className="text-sm font-medium text-white/90">{tHours(h.dayKey)}</p>
                     <p className="text-xs text-white/50">{h.time}</p>
                   </div>
                 </li>

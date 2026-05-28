@@ -46,7 +46,8 @@ src/
 │   └── ui/                 # Shadcn + SectionHeader, PriceTag, StarRating, TagBadge
 ├── hooks/                  # useMobileMenu, useMenuFilter, useScrolled, useWindowSize
 ├── lib/
-│   ├── constants/          # site.ts (SITE_CONFIG), navigation.ts (NAV_LINKS)
+│   ├── business-hours.ts   # ÚNICA FUENTE de verdad para horarios
+│   ├── constants/          # site.ts (SITE_CONFIG), navigation.ts (NAV_LINKS), delivery-platforms.ts
 │   ├── data/               # menu-items.ts, birthday-packages.ts, testimonials.ts, gallery-images.ts
 │   ├── seo/                # metadata.ts (buildMetadata), json-ld.ts (Restaurant schema)
 │   └── utils/              # formatters.ts (formatPrice CHF)
@@ -101,11 +102,109 @@ price: 16.50  // CHF — se formatea con formatPrice() en render
 // formatPrice(16.50) → "CHF 16.50"
 ```
 
-### Color Tokens
+### Color Tokens (paleta v2 — pastel premium)
 Los colores están en `src/app/globals.css` bajo `@theme {}` y se usan como clases Tailwind:
-- `bg-rose-blush`, `bg-rose-soft`, `bg-rose-medium`, `bg-rose-dark`
-- `bg-tropical-green`, `bg-tropical-green-light`, `bg-tropical-green-dark`
-- `bg-warm-beige`, `bg-cream`, `bg-espresso`, `bg-charcoal`
+- Fondos: `bg-cream`, `bg-rose-blush`, `bg-rose-cream`, `bg-warm-beige`
+- Rosa primario: `bg-rose-soft`, `bg-rose-medium`, `bg-rose-dark`, `bg-rose-accent`
+- Menta: `bg-tropical-green` (pastel decorativo), `bg-tropical-green-dark` (contraste con blanco)
+- Acentos: `bg-peach`, `bg-butter`, `bg-lavender`
+- WhatsApp específico: `bg-whatsapp`, `bg-whatsapp-dark`
+- Texto oscuro: `text-charcoal` (#4A2C3A — plum cálido)
+
+> ⚠️ `bg-tropical-green` es ahora **mint pastel** (#A8E6CF). NO usar con `text-white` directo.
+> Para botones/fondos con texto blanco: usar `bg-tropical-green-dark` o `bg-rose-medium`.
+> Para el botón de WhatsApp: usar `bg-whatsapp` (#25D366).
+
+---
+
+## Nueva Identidad Visual (v2)
+
+**Filosofía:** pastel · luminosa · alegre · femenina elegante · brunch café · instagram-friendly
+
+### Paleta Principal
+| Token | Hex | Uso |
+|---|---|---|
+| `cream` | `#FFF9F5` | Fondo de páginas |
+| `rose-blush` | `#FFF0F4` | Fondos de sección suaves |
+| `rose-medium` | `#FF8FA3` | Color primario, CTAs, botones |
+| `rose-dark` | `#FF6F91` | Hover states, gradientes |
+| `tropical-green` | `#A8E6CF` | Menta pastel decorativa |
+| `tropical-green-dark` | `#27AE78` | Verde legible (check icons, tags) |
+| `charcoal` | `#4A2C3A` | Texto oscuro, footer background |
+| `whatsapp` | `#25D366` | Botón WhatsApp exclusivamente |
+
+### Tipografía
+| Variable CSS | Fuente | Rol |
+|---|---|---|
+| `--font-montserrat` | **Fredoka** | Headings: redondeado, alegre, display |
+| `--font-poppins` | **Nunito** | Body: moderno, legible, suave |
+| `--font-bebas` | **Quicksand** | Eyebrow/display: geométrico premium |
+
+> Las variables CSS conservan sus nombres antiguos para no romper componentes existentes.
+> Las clases Tailwind `font-montserrat`, `font-poppins`, `font-bebas` siguen funcionando.
+
+### CTAs y Secciones de Fondo
+- Fondo de CTA principal: `bg-linear-to-br from-rose-medium to-rose-dark`
+- Secciones Features/Strip: `bg-linear-to-r from-rose-medium to-rose-dark`
+- Glass card: `background: rgba(255,249,245,0.85)` — tinte crema pastel
+
+---
+
+## Sistema de Horarios
+
+### Fuente Única: `src/lib/business-hours.ts`
+
+```typescript
+import { BUSINESS_HOURS } from "@/lib/business-hours";
+// Retorna: Array<{ dayKey: DayKey, time: string }>
+// dayKey mapea a next-intl: tHours(h.dayKey) → "Lunedì – Venerdì" etc.
+```
+
+### Para cambiar al horario de INVIERNO (oct–mar):
+1. Editar `src/lib/business-hours.ts` — actualizar los campos `time`
+2. Editar `src/lib/seo/json-ld.ts` — actualizar `opens`/`closes` en `openingHoursSpecification`
+3. (Opcional) `src/lib/constants/site.ts` campo `hours` — solo usado como fallback referencia
+
+### Horario actual (verano abr–sep)
+| Día | Horario |
+|---|---|
+| Lunes – Viernes | 08:00 – 23:00 |
+| Sábado | 09:00 – 23:00 |
+| Domingo | 10:00 – 23:00 |
+
+### Componentes que consumen BUSINESS_HOURS
+- `src/components/layout/Footer.tsx`
+- `src/app/[locale]/contact/page.tsx`
+
+---
+
+## Delivery — Plataformas
+
+### Configuración: `src/lib/constants/delivery-platforms.ts`
+
+```typescript
+import { ACTIVE_PLATFORMS } from "@/lib/constants/delivery-platforms";
+// Solo devuelve plataformas con enabled: true
+```
+
+### Activar / desactivar plataforma
+```typescript
+// En delivery-platforms.ts
+{ id: "just-eat", enabled: false, ... }  // → NO aparece en la página
+```
+
+### Añadir links reales
+Buscar `TODO_ADD_*_LINK` en `delivery-platforms.ts` y reemplazar con URLs reales:
+- `TODO_ADD_SMOOD_LINK` → URL del restaurante en smood.ch
+- `TODO_ADD_UBER_EATS_LINK` → URL del restaurante en ubereats.com
+- `TODO_ADD_JUST_EAT_LINK` → URL del restaurante en just-eat.ch
+
+### Logos de plataformas
+Actualmente se usan estilos con colores de marca (placeholder visual).
+Para producción, reemplazar con logos SVG oficiales en `/public/images/delivery/`:
+- `smood-logo.svg`
+- `uber-eats-logo.svg`
+- `just-eat-logo.svg`
 
 ---
 
@@ -119,10 +218,10 @@ Toda la información del restaurante vive en `src/lib/constants/site.ts` → `SI
 | Nombre | Mamitas Caffe & Bar |
 | Ciudad | Lugano, TI, Suiza |
 | Instagram | @mamitas_caffebar |
-| WhatsApp | +41760000000 (placeholder) |
+| WhatsApp | +41 76 464 09 05 |
+| Teléfono | +41 91 922 00 59 |
+| Email | eslynaga@gmail.com |
 | Dominio | mamitascaffe.ch (placeholder) |
-
-> ⚠️ Los campos marcados como "placeholder" deben actualizarse con datos reales antes del lanzamiento.
 
 ---
 
@@ -136,6 +235,7 @@ public/images/
 ├── logo.svg                 # Placeholder — reemplazar con logo real
 ├── og-default.jpg           # 1200×630 — Open Graph
 ├── hero-home.jpg            # Fondo hero principal
+├── delivery/                # Logos oficiales de plataformas delivery
 └── menu/                    # Fotos de cada plato
 ```
 
@@ -225,3 +325,49 @@ Nunca ejecutar `yarn install` o `pnpm install` en este proyecto.
 - **CMS**: Migrar `src/lib/data/menu-items.ts` → Sanity.io (el bridge JSON ya existe en `src/content/menu/`)
 - **Analytics**: Google Analytics o Plausible en `src/app/layout.tsx`
 - **WhatsApp Business API**: Para respuestas automáticas a inquiries de cumpleaños
+
+---
+
+## Pendientes de Producción
+
+- [ ] Subir imágenes reales (fotos del local, platos, equipo) → reemplazar Unsplash en `src/lib/data/`
+- [ ] Añadir logos SVG oficiales de delivery platforms en `/public/images/delivery/`
+- [ ] Reemplazar `TODO_ADD_*_LINK` en `src/lib/constants/delivery-platforms.ts`
+- [ ] Reemplazar `/images/logo.svg` con el logo real del restaurante
+- [ ] Actualizar dominio real en `src/lib/constants/site.ts` → `url` field
+- [ ] Configurar Resend (email) para formularios de contacto y cumpleaños
+
+---
+
+## Changelog
+
+### 2026-05-28 — Rediseño Visual Pastel Premium v2
+
+**Archivos creados:**
+- `src/lib/business-hours.ts` — única fuente de verdad para horarios
+- `src/lib/constants/delivery-platforms.ts` — config de plataformas con toggle enable/disable
+
+**Archivos modificados:**
+- `src/app/globals.css` — paleta pastel completa, nuevos tokens, shadcn :root actualizado
+- `src/app/[locale]/layout.tsx` — tipografía actualizada: Fredoka + Nunito + Quicksand
+- `src/lib/constants/site.ts` — horarios verano actualizados (23:00 cierre)
+- `src/lib/seo/json-ld.ts` — `openingHoursSpecification` actualizado
+- `src/components/layout/Footer.tsx` — consume BUSINESS_HOURS
+- `src/components/layout/WhatsAppButton.tsx` — usa `bg-whatsapp` (#25D366)
+- `src/components/layout/Navbar.tsx` — WhatsApp link usa `text-whatsapp-dark`
+- `src/components/sections/WhatsAppCTA.tsx` — `bg-rose-medium/dark` en lugar de tropical-green
+- `src/components/sections/FeaturesStrip.tsx` — `bg-rose-medium/dark` gradient
+- `src/components/sections/ContactForm.tsx` — success icon usa `text-tropical-green-dark`
+- `src/components/birthday/BirthdayPackages.tsx` — popular card usa rose en lugar de tropical-green
+- `src/components/birthday/BirthdayForm.tsx` — success icon usa `text-tropical-green-dark`
+- `src/components/menu/MenuCard.tsx` — vegetarian tag usa `text-tropical-green-dark`
+- `src/components/qr/QRSection.tsx` — URL text usa `text-rose-soft`
+- `src/app/[locale]/contact/page.tsx` — BUSINESS_HOURS + WhatsApp btn usa `bg-whatsapp`
+- `src/app/[locale]/delivery/page.tsx` — rediseño completo pastel premium
+- `src/app/[locale]/arepas/page.tsx` — CTA usa rose gradient
+- `src/app/[locale]/about/page.tsx` — CTA usa rose gradient
+- `src/app/[locale]/brunch/page.tsx` — info strip usa rose gradient
+- `src/app/[locale]/karaoke/page.tsx` — icons usan `text-rose-soft`, lint fix
+- `src/messages/it.json` — añadido `delivery.orderOn`
+- `src/messages/es.json` — añadido `delivery.orderOn`
+- `CLAUDE.md` — documentación completa actualizada

@@ -141,7 +141,7 @@ export function Navbar() {
                     href={SITE_CONFIG.social.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 text-sm text-tropical-green font-medium"
+                    className="flex items-center justify-center gap-2 text-sm text-whatsapp-dark font-medium"
                   >
                     WhatsApp: {SITE_CONFIG.contact.phone}
                   </a>

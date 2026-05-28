@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { MapPin, Clock, Phone, Mail, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { SITE_CONFIG } from "@/lib/constants/site";
+import { BUSINESS_HOURS } from "@/lib/business-hours";
 import { FadeUp } from "@/components/animations";
 import { ContactForm } from "@/components/sections/ContactForm";
 
@@ -24,12 +25,6 @@ export async function generateMetadata({
 export default async function ContactPage() {
   const t = await getTranslations("contact");
   const tHours = await getTranslations("hours");
-
-  const HOURS = [
-    { day: tHours("mondayFriday"), time: "08:00 – 18:00" },
-    { day: tHours("saturday"), time: "09:00 – 20:00" },
-    { day: tHours("sunday"), time: "10:00 – 17:00" },
-  ];
 
   return (
     <>
@@ -53,7 +48,7 @@ export default async function ContactPage() {
             {/* Left: Info + Map */}
             <FadeUp className="space-y-8">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-white p-5 shadow-sm">
+                <div className="rounded-2xl bg-white p-5 shadow-(--shadow-soft)">
                   <MapPin className="mb-3 text-rose-medium" size={22} />
                   <h3 className="font-semibold text-charcoal">{t("info.address")}</h3>
                   <a
@@ -70,7 +65,7 @@ export default async function ContactPage() {
                     {SITE_CONFIG.address.country}
                   </a>
                 </div>
-                <div className="rounded-2xl bg-white p-5 shadow-sm">
+                <div className="rounded-2xl bg-white p-5 shadow-(--shadow-soft)">
                   <Phone className="mb-3 text-rose-medium" size={22} />
                   <h3 className="font-semibold text-charcoal">{t("info.phone")}</h3>
                   <a
@@ -86,7 +81,7 @@ export default async function ContactPage() {
                     {SITE_CONFIG.contact.whatsapp}
                   </a>
                 </div>
-                <div className="rounded-2xl bg-white p-5 shadow-sm">
+                <div className="rounded-2xl bg-white p-5 shadow-(--shadow-soft)">
                   <Mail className="mb-3 text-rose-medium" size={22} />
                   <h3 className="font-semibold text-charcoal">{t("info.email")}</h3>
                   <a
@@ -96,16 +91,16 @@ export default async function ContactPage() {
                     {SITE_CONFIG.contact.email}
                   </a>
                 </div>
-                <div className="rounded-2xl bg-white p-5 shadow-sm">
+                <div className="rounded-2xl bg-white p-5 shadow-(--shadow-soft)">
                   <Clock className="mb-3 text-rose-medium" size={22} />
                   <h3 className="font-semibold text-charcoal">{t("info.hoursLabel")}</h3>
                   <div className="mt-1 space-y-1">
-                    {HOURS.map((h) => (
+                    {BUSINESS_HOURS.map((h) => (
                       <div
-                        key={h.day}
+                        key={h.dayKey}
                         className="flex justify-between text-xs text-charcoal/60"
                       >
-                        <span>{h.day}</span>
+                        <span>{tHours(h.dayKey)}</span>
                         <span>{h.time}</span>
                       </div>
                     ))}
@@ -114,14 +109,14 @@ export default async function ContactPage() {
               </div>
 
               {/* Social & WhatsApp */}
-              <div className="rounded-2xl bg-white p-5 shadow-sm">
+              <div className="rounded-2xl bg-white p-5 shadow-(--shadow-soft)">
                 <h3 className="mb-3 font-semibold text-charcoal">{t("info.quickContact")}</h3>
                 <div className="flex flex-wrap gap-2">
                   <a
                     href={SITE_CONFIG.social.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-full bg-tropical-green px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-tropical-green-dark"
+                    className="flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-whatsapp-dark"
                   >
                     <MessageCircle size={16} />
                     WhatsApp
@@ -130,7 +125,7 @@ export default async function ContactPage() {
                     href={SITE_CONFIG.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-full bg-rose-blush px-4 py-2 text-sm font-medium text-rose-dark transition-colors hover:bg-rose-soft"
+                    className="flex items-center gap-2 rounded-full bg-rose-blush px-4 py-2 text-sm font-medium text-rose-dark transition-colors hover:bg-rose-soft hover:text-white"
                   >
                     <Instagram size={16} />
                     {SITE_CONFIG.instagram}
@@ -148,7 +143,7 @@ export default async function ContactPage() {
               </div>
 
               {/* Map */}
-              <div className="overflow-hidden rounded-2xl shadow-sm">
+              <div className="overflow-hidden rounded-2xl shadow-(--shadow-soft)">
                 <iframe
                   src={SITE_CONFIG.address.googleMapsEmbed}
                   width="100%"

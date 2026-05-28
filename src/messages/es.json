@@ -249,6 +249,7 @@
     }
   },
   "delivery": {
+    "orderOn": "Pedir en",
     "seo": {
       "title": "Delivery — Mamitas a Tu Puerta en Lugano",
       "description": "Recibe la comida venezolana de Mamitas Caffe & Bar en casa. Arepas, empanadas, tequeños y más. Disponible en Smood, Uber Eats y Just Eat Lugano."

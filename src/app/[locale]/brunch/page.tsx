@@ -84,13 +84,13 @@ export default async function BrunchPage() {
       </section>
 
       {/* Info strip */}
-      <section className="bg-tropical-green py-8">
+      <section className="bg-linear-to-r from-rose-medium to-rose-dark py-8">
         <div className="mx-auto max-w-4xl px-4">
           <div className="grid grid-cols-3 gap-4 text-center text-white">
             {BRUNCH_INFO.map((info) => (
               <div key={info.label} className="flex flex-col items-center gap-1">
                 <info.icon size={22} className="text-white/70" />
-                <p className="text-xs uppercase tracking-wide text-white/60">{info.label}</p>
+                <p className="text-xs uppercase tracking-wide text-white/70">{info.label}</p>
                 <p className="font-montserrat font-bold">{info.value}</p>
               </div>
             ))}

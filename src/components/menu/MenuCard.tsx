@@ -48,7 +48,7 @@ export function MenuCard({ item, className }: MenuCardProps) {
           <div className="mt-4 flex items-center justify-between">
             <PriceTag price={item.price} />
             {item.isVegetarian && (
-              <span className="text-xs text-tropical-green">🌱 Vegetariano</span>
+              <span className="text-xs text-tropical-green-dark">🌱 Vegetariano</span>
             )}
           </div>
         </div>

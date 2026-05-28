@@ -34,13 +34,13 @@ export function WhatsAppButton() {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-tropical-green text-white shadow-lg shadow-tropical-green/30"
+          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg"
         >
           <MessageCircle size={26} fill="currentColor" />
 
           {/* Pulse ring */}
           <motion.div
-            className="absolute h-14 w-14 rounded-full bg-tropical-green"
+            className="absolute h-14 w-14 rounded-full bg-whatsapp"
             animate={{ scale: [1, 1.4, 1.4], opacity: [0.4, 0, 0] }}
             transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
           />

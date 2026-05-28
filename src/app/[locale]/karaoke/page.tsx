@@ -99,7 +99,7 @@ export default async function KaraokePage() {
               <div className="space-y-4">
                 {schedule.map((item) => (
                   <div key={item.time} className="flex gap-4 rounded-2xl bg-white/5 p-5">
-                    <div className="flex-shrink-0 text-center">
+                    <div className="shrink-0 text-center">
                       <Clock size={16} className="mx-auto mb-1 text-rose-soft" />
                       <span className="font-bebas text-xl text-rose-soft">{item.time}</span>
                     </div>
@@ -134,7 +134,7 @@ export default async function KaraokePage() {
                   { icon: Music, text: details[3] },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3 text-white/80">
-                    <item.icon size={18} className="text-tropical-green shrink-0" />
+                    <item.icon size={18} className="text-rose-soft shrink-0" />
                     <span>{item.text}</span>
                   </div>
                 ))}

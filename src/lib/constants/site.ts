@@ -22,9 +22,9 @@ export const SITE_CONFIG = {
     email: "eslynaga@gmail.com",
   },
   hours: [
-    { day: "Lunes – Viernes", dayIt: "Lunedì – Venerdì", time: "08:00 – 18:00" },
-    { day: "Sábado", dayIt: "Sabato", time: "09:00 – 20:00" },
-    { day: "Domingo", dayIt: "Domenica", time: "10:00 – 17:00" },
+    { day: "Lunes – Viernes", dayIt: "Lunedì – Venerdì", time: "08:00 – 23:00" },
+    { day: "Sábado", dayIt: "Sabato", time: "09:00 – 23:00" },
+    { day: "Domingo", dayIt: "Domenica", time: "10:00 – 23:00" },
   ],
   social: {
     instagram: "https://instagram.com/mamitas_caffebar",
