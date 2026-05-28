@@ -194,6 +194,31 @@ El `buildMetadata()` añade automáticamente las keywords base del restaurante.
 
 ---
 
+## Configuración de Build — next.config.ts
+
+El archivo `next.config.ts` incluye `turbopack.root` para evitar que Turbopack escanee fuera del directorio del proyecto:
+
+```typescript
+import path from "path";
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  turbopack: {
+    root: path.resolve(__dirname), // Limita el scan de lockfiles al proyecto
+  },
+  // ...
+};
+```
+
+> Esta configuración es necesaria porque Turbopack escanea directorios padre buscando lockfiles.  
+> Sin ella, puede detectar lockfiles espurios en directorios superiores y emitir el warning  
+> "We detected multiple lockfiles".
+
+**Lockfile único:** el proyecto usa **npm** exclusivamente. Solo debe existir `package-lock.json` en la raíz.  
+Nunca ejecutar `yarn install` o `pnpm install` en este proyecto.
+
+---
+
 ## Próximas Integraciones (Producción)
 
 - **Email**: Integrar Resend en `src/app/api/contact/route.ts` y `src/app/api/birthday-inquiry/route.ts`
