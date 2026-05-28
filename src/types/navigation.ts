@@ -1,4 +1,15 @@
+export type NavKey =
+  | "menu"
+  | "arepas"
+  | "brunch"
+  | "karaoke"
+  | "birthdays"
+  | "delivery"
+  | "about"
+  | "contact";
+
 export interface NavLink {
+  key: NavKey;
   label: string;
   href: string;
   isExternal?: boolean;
