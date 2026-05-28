@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { FadeUp, StaggerChildren, StaggerItem } from "@/components/animations";
 import { Heart, Coffee, Star, Users } from "lucide-react";
@@ -44,14 +44,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-charcoal py-28">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80"
-            alt=""
-            fill
-            className="object-cover"
-          />
-        </div>
+        <div className="absolute inset-0 bg-linear-to-br from-charcoal/80 via-espresso/40 to-charcoal/80 opacity-60" />
         <div className="relative mx-auto max-w-4xl px-4 text-center">
           <FadeUp>
             <span className="font-bebas mb-3 block text-sm tracking-[0.3em] text-rose-soft uppercase">
@@ -81,11 +74,12 @@ export default function AboutPage() {
           <div className="flex flex-col items-center gap-12 md:flex-row">
             <FadeUp className="flex-1">
               <div className="relative h-80 w-full overflow-hidden rounded-3xl">
-                <Image
+                <ImageWithFallback
                   src="https://images.unsplash.com/photo-1609590981063-d495f5096177?w=800&q=80"
                   alt="Barquisimeto, Venezuela"
                   fill
                   className="object-cover"
+                  fallbackSrc="/images/gallery/food.svg"
                 />
               </div>
             </FadeUp>
@@ -114,11 +108,12 @@ export default function AboutPage() {
           <div className="mt-20 flex flex-col items-center gap-12 md:flex-row-reverse">
             <FadeUp className="flex-1">
               <div className="relative h-80 w-full overflow-hidden rounded-3xl">
-                <Image
+                <ImageWithFallback
                   src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=800&q=80"
                   alt="Lugano, Suiza"
                   fill
                   className="object-cover"
+                  fallbackSrc="/images/gallery/ambiance.svg"
                 />
               </div>
             </FadeUp>

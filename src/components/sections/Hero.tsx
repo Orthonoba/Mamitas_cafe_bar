@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 interface HeroProps {
-  backgroundImage: string;
+  backgroundImage?: string;
   title: string;
   subtitle: string;
   eyebrow?: string;
@@ -40,21 +40,25 @@ export function Hero({
         className
       )}
     >
-      {/* Background image */}
-      <Image
-        src={backgroundImage}
-        alt=""
-        fill
-        className="object-cover"
-        priority
-        sizes="100vw"
-        quality={90}
-      />
+      {/* Background: image or gradient fallback */}
+      {backgroundImage ? (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+          quality={90}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-linear-to-br from-charcoal via-espresso to-charcoal/90" />
+      )}
 
       {/* Overlay */}
       <div
         className="absolute inset-0 bg-linear-to-b from-charcoal/60 via-charcoal/40 to-charcoal/70"
-        style={{ opacity: overlayOpacity * 1.2 }}
+        style={{ opacity: backgroundImage ? overlayOpacity * 1.2 : 0.5 }}
       />
 
       {/* Floating tropical decorations */}

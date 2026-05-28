@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { MENU_ITEMS } from "@/lib/data/menu-items";
 import { MenuCard } from "@/components/menu/MenuCard";
@@ -35,15 +35,8 @@ export default function BrunchPage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[70vh] overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=1920&q=85"
-          alt="Brunch tropical Mamitas"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-linear-to-b from-charcoal/70 via-charcoal/40 to-charcoal/80" />
+        <div className="absolute inset-0 bg-linear-to-br from-charcoal via-espresso to-charcoal/90" />
+        <div className="absolute inset-0 bg-linear-to-b from-charcoal/50 via-charcoal/30 to-charcoal/70" />
 
         <div className="relative z-10 flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
           <FadeUp>
@@ -126,11 +119,12 @@ export default function BrunchPage() {
           <div className="flex flex-col items-center gap-12 md:flex-row">
             <FadeUp className="flex-1">
               <div className="relative h-80 w-full overflow-hidden rounded-3xl">
-                <Image
+                <ImageWithFallback
                   src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80"
                   alt="Ambiente brunch Mamitas"
                   fill
                   className="object-cover"
+                  fallbackSrc="/images/gallery/food.svg"
                 />
               </div>
             </FadeUp>

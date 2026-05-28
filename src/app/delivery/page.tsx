@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { MENU_ITEMS } from "@/lib/data/menu-items";
 import { MenuCard } from "@/components/menu/MenuCard";
@@ -73,14 +73,7 @@ export default function DeliveryPage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-charcoal py-28 text-center">
-        <div className="absolute inset-0 opacity-15">
-          <Image
-            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&q=80"
-            alt=""
-            fill
-            className="object-cover"
-          />
-        </div>
+        <div className="absolute inset-0 bg-linear-to-br from-charcoal via-espresso/50 to-charcoal/90 opacity-80" />
         <div className="relative mx-auto max-w-3xl px-4">
           <FadeUp>
             <span className="font-bebas mb-3 block text-sm tracking-[0.3em] text-rose-soft uppercase">
@@ -193,11 +186,12 @@ export default function DeliveryPage() {
             </FadeUp>
             <FadeUp className="flex-1">
               <div className="relative h-72 w-full overflow-hidden rounded-3xl">
-                <Image
+                <ImageWithFallback
                   src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80"
                   alt="Packaging premium Mamitas delivery"
                   fill
                   className="object-cover"
+                  fallbackSrc="/images/gallery/food.svg"
                 />
               </div>
             </FadeUp>

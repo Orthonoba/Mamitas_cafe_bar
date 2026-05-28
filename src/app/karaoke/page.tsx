@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { MENU_ITEMS } from "@/lib/data/menu-items";
@@ -39,14 +38,8 @@ export default function KaraokePage() {
     <>
       {/* Hero — dark & energetic */}
       <section className="relative min-h-[80vh] overflow-hidden bg-charcoal">
-        <Image
-          src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&q=85"
-          alt="Karaoke Night Mamitas Lugano"
-          fill
-          className="object-cover opacity-30"
-          priority
-          sizes="100vw"
-        />
+        {/* Moody dark gradient background */}
+        <div className="absolute inset-0 bg-linear-to-br from-charcoal via-espresso to-charcoal/95" />
         {/* Neon glow effect */}
         <div className="absolute inset-0 bg-linear-to-br from-rose-medium/20 via-transparent to-tropical-green/20" />
 

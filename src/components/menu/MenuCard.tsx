@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { PriceTag } from "@/components/ui/PriceTag";
 import { TagBadge } from "@/components/ui/TagBadge";
 import { ScaleOnHover } from "@/components/animations";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import type { MenuItem } from "@/types";
 
 interface MenuCardProps {
@@ -18,19 +18,14 @@ export function MenuCard({ item, className }: MenuCardProps) {
       <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-(--shadow-card) transition-shadow hover:shadow-(--shadow-hover)">
         {/* Image */}
         <div className="relative h-48 w-full overflow-hidden bg-warm-beige">
-          {item.image ? (
-            <Image
-              src={item.image}
-              alt={item.name}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-          ) : (
-            <div className="flex h-full items-center justify-center">
-              <span className="text-4xl">🫓</span>
-            </div>
-          )}
+          <ImageWithFallback
+            src={item.image ?? "/images/menu/placeholder.svg"}
+            alt={item.name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            fallbackSrc="/images/menu/placeholder.svg"
+          />
 
           {/* Tag badges overlay */}
           {displayTags.length > 0 && (

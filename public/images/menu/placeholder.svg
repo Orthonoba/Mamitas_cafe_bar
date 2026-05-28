@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fadadd"/>
+      <stop offset="100%" stop-color="#f5ecd7"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <circle cx="360" cy="40" r="100" fill="#e8849a" fill-opacity="0.18"/>
+  <circle cx="40" cy="260" r="80" fill="#4caf7d" fill-opacity="0.1"/>
+  <circle cx="200" cy="150" r="80" fill="white" fill-opacity="0.2"/>
+  <text x="200" y="148" font-size="64" text-anchor="middle" dominant-baseline="middle">🍽️</text>
+  <text x="200" y="218" font-size="12" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#c85c7a" letter-spacing="2">MAMITAS CAFFE &amp; BAR</text>
+</svg>

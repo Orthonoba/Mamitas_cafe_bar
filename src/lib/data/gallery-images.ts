@@ -3,7 +3,7 @@ import type { GalleryImage } from "@/types";
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: "g-001",
-    src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80",
+    src: "/images/gallery/arepas.svg",
     alt: "Arepas venezolanas de Mamitas Caffe",
     width: 800,
     height: 600,
@@ -12,7 +12,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-002",
-    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+    src: "/images/gallery/coffee.svg",
     alt: "Café venezolano Guayoyo en Mamitas",
     width: 800,
     height: 1000,
@@ -21,7 +21,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-003",
-    src: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
+    src: "/images/gallery/desserts.svg",
     alt: "Postres venezolanos artesanales",
     width: 800,
     height: 600,
@@ -30,7 +30,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-004",
-    src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    src: "/images/gallery/ambiance.svg",
     alt: "Ambiente tropical del restaurante",
     width: 800,
     height: 533,
@@ -39,7 +39,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-005",
-    src: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80",
+    src: "/images/gallery/events.svg",
     alt: "Fiesta de cumpleaños infantil en Mamitas",
     width: 800,
     height: 600,
@@ -48,16 +48,16 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-006",
-    src: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
+    src: "/images/gallery/food.svg",
     alt: "Plato de comida venezolana",
     width: 800,
-    height: 800,
+    height: 600,
     tags: ["food"],
     caption: "Sabores auténticos de Venezuela",
   },
   {
     id: "g-007",
-    src: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80",
+    src: "/images/gallery/coffee.svg",
     alt: "Papelón con limón venezolano",
     width: 800,
     height: 600,
@@ -66,7 +66,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-008",
-    src: "https://images.unsplash.com/photo-1471930623571-a1e2dbe2f174?w=800&q=80",
+    src: "/images/gallery/food.svg",
     alt: "Brunch latinoamericano en Lugano",
     width: 800,
     height: 533,
@@ -75,7 +75,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-009",
-    src: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=800&q=80",
+    src: "/images/gallery/events.svg",
     alt: "Decoración de cumpleaños infantil",
     width: 800,
     height: 600,
@@ -84,7 +84,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-010",
-    src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+    src: "/images/gallery/coffee.svg",
     alt: "Café especial venezolano",
     width: 800,
     height: 1000,
@@ -93,7 +93,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-011",
-    src: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80",
+    src: "/images/gallery/desserts.svg",
     alt: "Postres artesanales venezolanos",
     width: 800,
     height: 600,
@@ -102,7 +102,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "g-012",
-    src: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80",
+    src: "/images/gallery/arepas.svg",
     alt: "Desayuno venezolano completo",
     width: 800,
     height: 600,

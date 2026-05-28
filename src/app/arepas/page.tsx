@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { MENU_ITEMS } from "@/lib/data/menu-items";
@@ -6,6 +5,7 @@ import { PriceTag } from "@/components/ui/PriceTag";
 import { TagBadge } from "@/components/ui/TagBadge";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { FadeUp, StaggerChildren, StaggerItem } from "@/components/animations";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { SITE_CONFIG } from "@/lib/constants/site";
 import { MessageCircle } from "lucide-react";
 
@@ -56,15 +56,14 @@ export default function ArepassPage() {
                 <article className="group relative overflow-hidden rounded-3xl bg-white shadow-(--shadow-card) transition-all hover:shadow-(--shadow-hover) hover:-translate-y-1">
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden">
-                    {arepa.image && (
-                      <Image
-                        src={arepa.image}
-                        alt={arepa.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    )}
+                    <ImageWithFallback
+                      src={arepa.image ?? "/images/gallery/arepas.svg"}
+                      alt={arepa.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      fallbackSrc="/images/gallery/arepas.svg"
+                    />
                     <div className="absolute inset-0 bg-linear-to-t from-charcoal/70 via-transparent to-transparent" />
 
                     {/* Glass overlay on hover */}

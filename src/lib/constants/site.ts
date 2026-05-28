@@ -6,14 +6,14 @@ export const SITE_CONFIG = {
   logo: "/images/logo.svg",
   instagram: "@mamitas_caffebar",
   address: {
-    street: "Lugano",
+    street: "Via al Forte 10",
     city: "Lugano",
     canton: "TI",
     country: "Switzerland",
     postalCode: "6900",
-    googleMapsUrl: "https://maps.google.com/?q=Mamitas+Caffe+Bar+Lugano",
+    googleMapsUrl: "https://maps.google.com/?q=Via+al+Forte+10,+6900+Lugano,+Switzerland",
     googleMapsEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44094.56!2d8.9524!3d46.0037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47842dd91d2a9a91%3A0x9de9d72f51fd6e09!2sLugano!5e0!3m2!1sit!2sch!4v1",
+      "https://maps.google.com/maps?q=Via+al+Forte+10,+6900+Lugano,+Switzerland&output=embed&z=16",
   },
   contact: {
     phone: "+41 76 XXX XX XX",

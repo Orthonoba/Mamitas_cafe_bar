@@ -1,4 +1,4 @@
-import { MapPin, Clock, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Clock, Phone, Mail, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { SITE_CONFIG } from "@/lib/constants/site";
 import { FadeUp } from "@/components/animations";
@@ -41,11 +41,18 @@ export default function ContactPage() {
                 <div className="rounded-2xl bg-white p-5 shadow-sm">
                   <MapPin className="mb-3 text-rose-medium" size={22} />
                   <h3 className="font-semibold text-charcoal">Dirección</h3>
-                  <p className="mt-1 text-sm text-charcoal/60">
-                    {SITE_CONFIG.address.city}, {SITE_CONFIG.address.canton}
+                  <a
+                    href={SITE_CONFIG.address.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block text-sm text-charcoal/60 transition-colors hover:text-rose-medium"
+                  >
+                    {SITE_CONFIG.address.street}
+                    <br />
+                    {SITE_CONFIG.address.postalCode} {SITE_CONFIG.address.city}, {SITE_CONFIG.address.canton}
                     <br />
                     {SITE_CONFIG.address.country}
-                  </p>
+                  </a>
                 </div>
                 <div className="rounded-2xl bg-white p-5 shadow-sm">
                   <Phone className="mb-3 text-rose-medium" size={22} />
@@ -84,10 +91,19 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Social */}
+              {/* Social & WhatsApp */}
               <div className="rounded-2xl bg-white p-5 shadow-sm">
-                <h3 className="mb-3 font-semibold text-charcoal">Síguenos</h3>
-                <div className="flex gap-3">
+                <h3 className="mb-3 font-semibold text-charcoal">Contacto rápido</h3>
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href={SITE_CONFIG.social.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-full bg-tropical-green px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-tropical-green-dark"
+                  >
+                    <MessageCircle size={16} />
+                    WhatsApp
+                  </a>
                   <a
                     href={SITE_CONFIG.social.instagram}
                     target="_blank"
@@ -95,7 +111,7 @@ export default function ContactPage() {
                     className="flex items-center gap-2 rounded-full bg-rose-blush px-4 py-2 text-sm font-medium text-rose-dark transition-colors hover:bg-rose-soft"
                   >
                     <Instagram size={16} />
-                    Instagram
+                    {SITE_CONFIG.instagram}
                   </a>
                   <a
                     href={SITE_CONFIG.social.facebook}

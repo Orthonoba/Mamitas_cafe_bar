@@ -19,7 +19,6 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        backgroundImage="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=85"
         eyebrow="Mamitas Caffe & Bar · Lugano"
         title="Sabores latinos en el corazón de Lugano"
         subtitle="Arepas venezolanas auténticas, brunch tropical y fiestas de cumpleaños inolvidables. Un pedacito de Venezuela en el Ticino."
